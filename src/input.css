@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-16px) rotate(0.6deg); }
 }
+
+@keyframes float-alt {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-11px) rotate(-0.4deg); }
+}
+
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 5.5s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  will-change: transform;
 }
 .animate-float-delay {
-  animation: float 4s ease-in-out 0.8s infinite;
+  animation: float-alt 5.5s cubic-bezier(0.37, 0, 0.63, 1) 1.4s infinite;
+  will-change: transform;
 }
